@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
+import configureStore from './store/configureStore';
+import SomeComponent from './components/SomeComponent/SomeComponent';
+import './styles/styles.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+      <SomeComponent />
+  </Provider>,
+  document.getElementById('app')
+);
