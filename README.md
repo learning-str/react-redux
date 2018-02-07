@@ -1,6 +1,7 @@
 # reference
-[Tutorial For Adding Redux to a React App](https://code.likeagirl.io/tutorial-for-adding-redux-to-a-react-app-1a94cc1738e5)
-[Reduxチュートリアル動画を見ながらReduxを基礎の基礎から](https://qiita.com/insight3110/items/4d212ecef6992e8eaee5)
+[Tutorial For Adding Redux to a React App](https://code.likeagirl.io/tutorial-for-adding-redux-to-a-react-app-1a94cc1738e5)  
+[Reduxチュートリアル動画を見ながらReduxを基礎の基礎から](https://qiita.com/insight3110/items/4d212ecef6992e8eaee5)  
+[最短で学ぶReactとReduxの基礎から実践まで](https://www.udemy.com/react-redux-from-beginning/learn/v4/t/lecture/7538812?start=45)  
 
 # memo
 - 1つのstoreオブジェクトがすべてのstateを持っている。
