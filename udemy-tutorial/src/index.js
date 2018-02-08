@@ -11,7 +11,8 @@ const render = () => {
   const state = store.getState()
   console.log(state)
   ReactDOM.render(
-    <App name='john' age='20'/>,
+    <App
+    name={state.name} age='20'/>,
       document.querySelector('.container')
   )
 }

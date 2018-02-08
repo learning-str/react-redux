@@ -1,3 +1,3 @@
-export default (state = { name: 'bob'}, action) => {
+export default (state = { name: 'hoge' }, action) => {
   return state
 }
