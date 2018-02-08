@@ -5,35 +5,44 @@ import Greeting from './greeting'
 import Param from './param'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: "Bob",
-    }
+  componentDidMount() {
+    this.unsubscribe = this.props.store.subscribe(() => {
+      this.forceUpdate()
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe()
   }
 
   handleNameChange(e) {
     e.preventDefault()
-    this.props.onNameChange(e.target.value)
+    this.props.store.dispatch({ type: 'CHANGE_NAME', name: e.target.value })
   }
 
   render() {
+    const state = this.props.store.getState()
     return (
       <div>
         <input
           type="text"
-          value={this.props.name}
+          value={state.name}
           onChange={e => this.handleNameChange(e)}/>
-        <Greeting name={this.props.name} />
-        <Param name={this.props.name}
+        <Greeting name={state.name} />
+        <Param name={state.name}
         age={this.props.age} />
       </div>)
   }
 }
 
 App.propTypes = {
-  name: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
   age: PropTypes.string.isRequired,
+  store: PropTypes.shape({
+    subscribe: PropTypes.func,
+    getState: PropTypes.func,
+    dispatch: PropTypes.func,
+  }).isRequired,
 }
 
 export default App

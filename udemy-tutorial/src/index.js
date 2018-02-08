@@ -5,20 +5,10 @@ import { createStore } from 'redux'
 import App from './components/app'
 import reducer from './reducers/'
 
-const store = createStore(reducer)
-
-const render = () => {
-  const state = store.getState()
-  console.log(state)
-  ReactDOM.render(
-    <App
-      name={state.name}
-      age='20'
-      onNameChange={name => store.dispatch({ type: 'CHANGE_NAME', name })}
-    />,
-      document.querySelector('.container')
-  )
-}
-
-render()
-store.subscribe(render)
+ReactDOM.render(
+  <App
+    store={createStore(reducer)}
+    age='20'
+  />,
+  document.querySelector('.container')
+)
