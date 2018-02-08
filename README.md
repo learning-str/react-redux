@@ -7,3 +7,15 @@
 - 1つのstoreオブジェクトがすべてのstateを持っている。
 - 状態(State)は基本読み取りのみ。書き込むにはStoreが提供するメソッドであるDispatchでActionを投げる時だけ
 - pure function(純粋関数)は引数を変更しない。impure function(副作用?)は引数を変更する。reducer function はpure function である必要がある。
+
+# 最短で学ぶReactとReduxの基礎から実践まで
+## linter
+- atom設定
+  - `$ apm install es6-javascript intentions busy-signal linter-ui-default linter linter-eslint`
+- eslint
+  - `$ npm i -D eslint`
+  - `$ ./node_modules/.bin/eslint --init`
+    - Use a popular style guide
+    - Airbnb
+    - react -> yes
+    - JavaScript
