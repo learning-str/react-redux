@@ -19,3 +19,9 @@
     - Airbnb
     - react -> yes
     - JavaScript
+
+## atom input support
+- apm install emmet
+- add keymap.config
+  - `'atom-text-editor[data-grammar="source js jsx"]':
+  'tab': 'emmet:expand-abbreviation-with-tab'`
