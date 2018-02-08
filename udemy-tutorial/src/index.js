@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 
 import App from './components/app'
-import reducer from './reducers'
+import reducer from './reducers/'
 
 const store = createStore(reducer)
 
@@ -12,7 +12,10 @@ const render = () => {
   console.log(state)
   ReactDOM.render(
     <App
-    name={state.name} age='20'/>,
+      name={state.name}
+      age='20'
+      onNameChange={name => store.dispatch({ type: 'CHANGE_NAME', name })}
+    />,
       document.querySelector('.container')
   )
 }
