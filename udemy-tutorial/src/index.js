@@ -1,9 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
 // import App from './App';
-// import registerServiceWorker from './registerServiceWorker';
-//
-ReactDOM.render(<div>Hello React!!!</div>, document.querySelector('.container'));
-// registerServiceWorker();
-// alert('hello')
+ReactDOM.render(<div>Hello React!!!</div>, document.querySelector('.container'))
