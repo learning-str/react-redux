@@ -1,48 +1,47 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import Greeting from '../components/greeting'
 import Param from '../components/param'
 
+const mapStateToProps = state => ({
+  name: state.name
+})
+
+const mapDispatchToProps = dispatch => ({
+  onNameChange: name => dispatch({ type: 'CHANGE_NAME', name })
+})
+
 class App extends Component {
-  componentDidMount() {
-    this.unsubscribe = this.props.store.subscribe(() => {
-      this.forceUpdate()
-    })
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe()
-  }
-
-  handleNameChange(e) {
-    e.preventDefault()
-    this.props.store.dispatch({ type: 'CHANGE_NAME', name: e.target.value })
+  handleNameChange(name) {
+    this.props.onNameChange(name)
   }
 
   render() {
-    const state = this.props.store.getState()
+    console.log(this.props)
+
     return (
       <div>
         <input
           type="text"
-          value={state.name}
-          onChange={e => this.handleNameChange(e)}/>
-        <Greeting name={state.name} />
-        <Param name={state.name}
+          onChange={e => {
+            e.preventDefault()
+            this.handleNameChange(e.target.value)
+          }}/>
+        <Greeting name={this.props.name} />
+        <Param name={this.props.name}
         age={this.props.age} />
       </div>)
   }
 }
 
 App.propTypes = {
-  // name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   age: PropTypes.string.isRequired,
-  store: PropTypes.shape({
-    subscribe: PropTypes.func,
-    getState: PropTypes.func,
-    dispatch: PropTypes.func,
-  }).isRequired,
+  onNameChange: PropTypes.func,
 }
 
-export default App
+const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
+
+export default ConnectedApp
