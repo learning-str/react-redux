@@ -7,6 +7,10 @@
 - 1つのstoreオブジェクトがすべてのstateを持っている。
 - 状態(State)は基本読み取りのみ。書き込むにはStoreが提供するメソッドであるDispatchでActionを投げる時だけ
 - pure function(純粋関数)は引数を変更しない。impure function(副作用?)は引数を変更する。reducer function はpure function である必要がある。
+- presentational components
+  - propsに従ってDOMを返すだけのcomponent
+- container components
+  - store をsubscribeするcomponent
 
 # 最短で学ぶReactとReduxの基礎から実践まで
 ## linter

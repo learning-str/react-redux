@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Greeting from './greeting'
-import Param from './param'
+import Greeting from '../components/greeting'
+import Param from '../components/param'
 
 class App extends Component {
   componentDidMount() {
