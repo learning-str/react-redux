@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Greeting from './greeting'
+import Param from './param'
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +23,8 @@ class App extends Component {
           value={this.state.name}
           onChange={e => this.handleNameChange(e.target.value)}/>
         <Greeting name={this.state.name} />
+        <Param name={this.props.name}
+        age={this.props.age} />
       </div>)
   }
 }
