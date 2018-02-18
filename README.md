@@ -25,3 +25,6 @@
 - add keymap.config
   - `'atom-text-editor[data-grammar="source js jsx"]':
   'tab': 'emmet:expand-abbreviation-with-tab'`
+
+## geocode
+- [Google maps api デベロッパー ガイド](https://developers.google.com/maps/documentation/geocoding/intro?hl=ja)
